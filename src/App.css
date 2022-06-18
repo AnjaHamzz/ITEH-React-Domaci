@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+#konvertor-div{
+  width: 22%;
+  margin-top: 3%;
+  margin-left: 39%;
+}
+
+.knv-polja{
+  margin-bottom: 15px;
+}
+
+#konv-head{
+  margin-top: 80px;
+}
