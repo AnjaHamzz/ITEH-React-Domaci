@@ -46,7 +46,7 @@ function Konvertor(){
     return (
         <div>
 
-            <h2 id="konv-head">Konvertor</h2>
+            <h2 id="konv-head" className="text-primary">Konvertor</h2>
 
             <div id="konvertor-div">
 
