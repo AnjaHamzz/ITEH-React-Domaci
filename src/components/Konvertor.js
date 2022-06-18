@@ -50,11 +50,11 @@ function Konvertor(){
 
             <div id="konvertor-div">
 
-                <input type="text" onChange={updateValuta1}  className="form-control text-center knv-polja" placeholder="Valuta 1..." />
+                <input type="text" value={valuta1} onChange={updateValuta1}  className="form-control text-center knv-polja" placeholder="Valuta 1..." />
 
-                <input type="text" onChange={updateValuta2} className="form-control text-center knv-polja" placeholder="Valuta 2..."/>
+                <input type="text" value={valuta2} onChange={updateValuta2} className="form-control text-center knv-polja" placeholder="Valuta 2..."/>
 
-                <input type="text" onChange={updateIznos}  className="form-control text-center knv-polja" placeholder="Iznos..."/>
+                <input type="text" value={iznos} onChange={updateIznos}  className="form-control text-center knv-polja" placeholder="Iznos..."/>
 
 
                 <button onClick={konvertujValute} className="btn btn-danger mt-3">Konvert</button>

@@ -50,3 +50,14 @@
 #konv-head{
   margin-top: 80px;
 }
+
+.zahtev-clan {
+  width: 15%;
+  margin-right: 20px;
+}
+
+.zahtev {
+  display: flex;
+  margin-top: 50px;
+  margin-left: 300px;
+}
