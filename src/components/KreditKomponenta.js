@@ -62,7 +62,7 @@ function KreditKomponenta(props){
 
             </div>
 
-            <button className="btn btn-danger mt-3">Proveri</button>
+            <button className="btn btn-danger mt-3" onClick={() => props.provera(imeprezime, plata, iznosKredita/brojRata)}>Proveri</button>
 
         </div>
     )
