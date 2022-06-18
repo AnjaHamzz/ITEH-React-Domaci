@@ -1,10 +1,12 @@
 import {useState} from 'react'
+import axios from 'axios'
 
 function Konvertor(){
 
     const [valuta1, setValuta1] = useState();
     const [valuta2, setValuta2] = useState();
     const [iznos, setIznos] = useState();
+    const [rezultat, setRezultat] = useState();
 
     function updateValuta1(e){
         setValuta1(e.target.value);
@@ -18,12 +20,33 @@ function Konvertor(){
         setIznos(e.target.value);
     }
 
-    console.log(valuta1, valuta2, iznos)
+
+    function konvertujValute(){
+
+        const options = {
+            method: 'GET',
+            url: 'https://currency-converter18.p.rapidapi.com/api/v1/convert',
+            params: {from: valuta1, to: valuta2, amount: iznos},
+            headers: {
+              'X-RapidAPI-Key': '4916172c11msh0beee19c8846ca4p127267jsn0bc7bcd7fc43',
+              'X-RapidAPI-Host': 'currency-converter18.p.rapidapi.com'
+            }
+          };
+
+        axios.request(options).then(function (response) {
+            setRezultat(response.data.result.convertedAmount + " " + response.data.result.to)
+        }).catch(function (error) {
+            console.error(error);
+        });
+
+    }
+
+    console.log(rezultat)
 
     return (
         <div>
 
-            <h2 id="konv-head">Konvertor valuta</h2>
+            <h2 id="konv-head">Konvertor</h2>
 
             <div id="konvertor-div">
 
@@ -34,7 +57,10 @@ function Konvertor(){
                 <input type="text" onChange={updateIznos}  className="form-control text-center knv-polja" placeholder="Iznos..."/>
 
 
-                <button className="btn btn-danger mt-3">Konvert</button>
+                <button onClick={konvertujValute} className="btn btn-danger mt-3">Konvert</button>
+
+
+                <h2 className="mt-3">{rezultat}</h2>
  
             </div>
 
